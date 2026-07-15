@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mentions légales | Raízes, généalogie portugaise</title>
+<meta name="robots" content="noindex, follow">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect width='34' height='34' rx='5' fill='%231E4C96'/%3E%3Cpath d='M17 4 C21 9 25 9 30 8 C27 13 27 16 30 17 C25 18 21 18 17 24 C13 18 9 18 4 17 C7 16 7 13 4 8 C9 9 13 9 17 4 Z' fill='none' stroke='%23FCFBF7' stroke-width='1.6'/%3E%3Ccircle cx='17' cy='17' r='2.4' fill='%23FCFBF7'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bleu:#1E4C96;--bleu-fonce:#14335F;--papier:#FCFBF7;--encre:#2A2E38;--gris:#5C6270;--filet:#E3E0D6}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',sans-serif;color:var(--encre);background:var(--papier);line-height:1.7;font-size:17px}
+h1,h2{font-family:'EB Garamond',serif;font-weight:500;color:var(--bleu-fonce)}
+a{color:var(--bleu)}
+.wrap{max-width:720px;margin:0 auto;padding:50px 26px 70px}
+h1{font-size:2rem;margin-bottom:30px}
+h2{font-size:1.25rem;margin:34px 0 10px}
+p{margin-bottom:12px}
+.retour{display:inline-block;margin-bottom:36px;font-size:.95rem}
+.a-completer{background:#FFF6DE;border:1px dashed #C29A3B;padding:2px 6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="retour" href="index.html">&larr; Retour au site</a>
+<h1>Mentions légales</h1>
+
+<h2>Éditeur du site</h2>
+<p>Le site genealogie-portugaise.fr est édité par <span class="a-completer">[Prénom NOM]</span>, entrepreneur individuel (micro-entreprise), immatriculé sous le numéro SIRET <span class="a-completer">[à compléter après création de la micro-entreprise]</span>.</p>
+<p>Adresse : <span class="a-completer">[votre adresse, ou une domiciliation]</span><br>
+Contact : <span class="a-completer">[votre adresse mail]</span></p>
+
+<h2>Directeur de la publication</h2>
+<p><span class="a-completer">[Prénom NOM]</span></p>
+
+<h2>Hébergement</h2>
+<p>Le site est hébergé par GitHub Pages, un service de GitHub, Inc., 88 Colin P. Kelly Jr Street, San Francisco, CA 94107, États-Unis (<a href="https://pages.github.com" rel="nofollow">pages.github.com</a>).</p>
+<p>Le nom de domaine est enregistré auprès d'OVH SAS, 2 rue Kellermann, 59100 Roubaix, France.</p>
+
+<h2>Nature de l'activité</h2>
+<p>Les prestations proposées sont des recherches généalogiques à caractère familial, réalisées dans les archives publiques portugaises. Elles n'ont aucune valeur juridique et ne constituent pas des recherches successorales, lesquelles relèvent de généalogistes professionnels habilités.</p>
+
+<h2>Données personnelles (RGPD)</h2>
+<p>Les informations transmises via le formulaire de contact (nom, adresse mail, message) sont utilisées exclusivement pour répondre à votre demande et, le cas échéant, réaliser la prestation convenue. Elles ne sont ni cédées, ni vendues, ni transmises à des tiers à des fins commerciales.</p>
+<p>Le formulaire de contact utilise le service FormSubmit (formsubmit.co) pour l'acheminement des messages vers notre boîte mail.</p>
+<p>Les informations généalogiques que vous communiquez pour une recherche (noms, dates, lieux concernant votre famille) sont conservées le temps de la prestation, puis archivées ou supprimées sur simple demande. Conformément au Règlement général sur la protection des données, vous disposez d'un droit d'accès, de rectification et de suppression de vos données : il suffit d'en faire la demande par mail à <span class="a-completer">[votre adresse mail]</span>.</p>
+<p>Ce site n'utilise pas de cookies de suivi publicitaire.</p>
+
+<h2>Propriété intellectuelle</h2>
+<p>Les contenus de ce site (textes, mises en forme, illustrations) sont la propriété de leur auteur. Les copies d'actes remises dans le cadre des prestations proviennent d'archives publiques portugaises et restent soumises aux conditions de réutilisation de ces institutions.</p>
+</div>
+</body>
+</html>
