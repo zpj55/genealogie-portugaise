@@ -8,15 +8,19 @@
 <title>Généalogie portugaise : retrouvez vos ancêtres au Portugal | Raízes</title>
 <meta name="description" content="Recherche généalogique spécialisée dans les archives du Portugal : registres paroissiaux, état civil portugais. Actes authentiques traduits du vieux portugais au français. Paiement uniquement au résultat.">
 <meta name="keywords" content="généalogie portugaise, généalogiste Portugal, retrouver ancêtres portugais, arbre généalogique Portugal, recherche ancêtres Portugal, registres paroissiaux portugais, origine famille portugaise">
-<link rel="canonical" href="https://www.exemple.fr/">
+<link rel="canonical" href="https://genealogie-portugaise.fr/">
 <meta name="robots" content="index, follow">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:title" content="Généalogie portugaise : retrouvez vos ancêtres au Portugal">
 <meta property="og:description" content="Recherche de vos ancêtres dans les archives portugaises. Actes authentiques + traduction en français. Vous ne payez qu'au résultat.">
-<meta property="og:url" content="https://www.exemple.fr/">
+<meta property="og:url" content="https://genealogie-portugaise.fr/">
 <meta property="og:site_name" content="Raízes, généalogie portugaise">
+<meta property="og:image" content="https://genealogie-portugaise.fr/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect width='34' height='34' rx='5' fill='%231E4C96'/%3E%3Cpath d='M17 4 C21 9 25 9 30 8 C27 13 27 16 30 17 C25 18 21 18 17 24 C13 18 9 18 4 17 C7 16 7 13 4 8 C9 9 13 9 17 4 Z' fill='none' stroke='%23FCFBF7' stroke-width='1.6'/%3E%3Ccircle cx='17' cy='17' r='2.4' fill='%23FCFBF7'/%3E%3C/svg%3E">
 
 <script type="application/ld+json">
 {
@@ -190,6 +194,9 @@ p+p{margin-top:14px}
 
 /* à propos */
 .apropos p{max-width:42em}
+.portrait-flex{display:flex;gap:34px;align-items:flex-start}
+.portrait{flex:none;width:180px;height:180px;object-fit:cover;border:1px solid var(--filet);box-shadow:2px 3px 0 var(--filet)}
+@media(max-width:640px){.portrait-flex{flex-direction:column;gap:18px}.portrait{width:130px;height:130px}}
 .note-juridique{font-size:.88rem;color:var(--gris);margin-top:20px;max-width:42em}
 
 /* FAQ */
@@ -325,6 +332,9 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:3px solid var(-
         <p>Pour chaque ancêtre retrouvé, votre dossier contient la copie de l'acte authentique tel qu'il figure dans les archives portugaises, sa transcription, déchiffrée depuis l'écriture manuscrite ancienne quand l'état du document le permet, et sa traduction en français, pour que toute la famille puisse la lire.</p>
         <p>Le tout est réuni dans un arbre généalogique mis en forme avec soin, où chaque personne est reliée à ses sources. Un document pensé pour être conservé, encadré, transmis.</p>
       </div>
+      <!-- CONSEIL : remplacez cette maquette par la photo d'un VRAI acte de votre propre famille
+           (scan du registre manuscrit) suivi de votre transcription et traduction.
+           C'est votre meilleure preuve de savoir-faire. -->
       <div class="acte" aria-label="Exemple de rendu : extrait d'acte avec sa traduction">
         <div class="entete">Exemple : acte de baptême, paroisse de São Pedro, 1834</div>
         <p class="vieux">« Aos vinte e três dias do mês de Maio de mil oitocentos e trinta e quatro, baptizei solenemente a Manuel, filho legítimo de José Ferreira e de Maria da Conceição… »</p>
@@ -368,7 +378,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:3px solid var(-
         <div class="prix">400&nbsp;€</div>
       </div>
       <div class="ligne-tarif">
-        <div class="desc"><strong>Le maximum possible</strong><span>Les quatre lignées remontées aussi loin que les archives le permettent, souvent au-delà de 1750.</span></div>
+        <div class="desc"><strong>Le maximum possible</strong><span>Les quatre lignées remontées aussi loin que les archives le permettent, souvent au-delà de 1750. Si les archives s'arrêtent plus tôt, le prix est ramené au prorata : vous ne payez jamais 700&nbsp;€ pour un résultat équivalent à une formule inférieure.</span></div>
         <div class="prix">700&nbsp;€</div>
       </div>
       <div class="prorata">
@@ -383,8 +393,15 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:3px solid var(-
   <div class="wrap">
     <h2 class="titre">Un passionné, pas un cabinet</h2>
     <p class="soustitre">Et je préfère le dire clairement.</p>
-    <p>Je suis un généalogiste amateur. La généalogie portugaise est ma passion depuis que j'ai reconstitué mon propre arbre familial dans les archives du Portugal, paroisse par paroisse, acte par acte, jusqu'au XVIII<sup>e</sup> siècle. C'est cette expérience qui m'a appris à naviguer dans les fonds portugais, à déchiffrer l'écriture ancienne et à recouper les informations quand les registres sont lacunaires.</p>
-    <p>Mon statut d'amateur a un avantage direct pour vous : des tarifs bien plus accessibles qu'un cabinet professionnel, et un paiement au résultat que peu de professionnels acceptent de proposer. En échange, je vous demande un peu de patience : je consacre à chaque famille le temps qu'il faut, pas le temps qu'on facture.</p>
+    <div class="portrait-flex">
+      <!-- REMPLACEZ le src ci-dessous par une vraie photo de vous (idéalement carrée, 400x400 px min) -->
+      <img class="portrait" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%231E4C96'/%3E%3Ccircle cx='100' cy='78' r='34' fill='%23FCFBF7'/%3E%3Cpath d='M40 178 C40 130 160 130 160 178 Z' fill='%23FCFBF7'/%3E%3C/svg%3E" alt="Julien, généalogiste spécialisé dans les archives portugaises" width="180" height="180">
+      <div>
+        <p>Je m'appelle <strong>Julien</strong>, et je suis un généalogiste amateur, au sens propre du mot : celui qui aime. La généalogie portugaise est ma passion depuis que j'ai reconstitué mon propre arbre familial dans les archives du Portugal, paroisse par paroisse, acte par acte, jusqu'au XVIII<sup>e</sup> siècle. <!-- Personnalisez ici : votre district/village d'origine, ex. "Ma famille vient du district de Braga..." --></p>
+        <p>C'est cette expérience qui m'a appris à naviguer dans les fonds portugais, à déchiffrer l'écriture ancienne des curés et à recouper les informations quand les registres sont lacunaires.</p>
+        <p>Ce fonctionnement indépendant a un avantage direct pour vous : des tarifs bien plus accessibles qu'un cabinet, et un paiement au résultat que peu de professionnels acceptent de proposer. En échange, je vous demande un peu de patience : je consacre à chaque famille le temps qu'il faut, pas le temps qu'on facture.</p>
+      </div>
+    </div>
     <p class="note-juridique">Recherches à caractère familial uniquement. Pour les recherches à but juridique (successions, notariat), je vous orienterai vers un généalogiste professionnel habilité.</p>
   </div>
 </section>
@@ -424,6 +441,14 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:3px solid var(-
         <p>Oui. Par défaut, je remonte la lignée de père en père de chacun de vos quatre grands-parents : c'est la plus simple à suivre, puisque le nom se transmet. Mais si vous préférez une lignée de mère en mère, ou une branche particulière qui vous tient à cœur, le choix des quatre lignées se fait ensemble lors de l'évaluation gratuite, au même tarif. Et à chaque génération, l'épouse est identifiée et ajoutée à l'arbre quand les actes le permettent.</p>
       </details>
       <details>
+        <summary>Combien de temps dure une recherche ?</summary>
+        <p>Comptez de quelques semaines à deux ou trois mois selon la profondeur choisie, la région et l'état des archives. Je donne une estimation plus précise lors de l'évaluation gratuite, et je vous tiens informé des avancées tout au long de la recherche. La contrepartie du paiement au résultat, c'est que je prends le temps de faire les choses bien plutôt que vite.</p>
+      </details>
+      <details>
+        <summary>Sous quelle forme je reçois mon arbre et mes actes ?</summary>
+        <p>Vous recevez un dossier numérique complet (PDF) : l'arbre généalogique mis en forme, et pour chaque ancêtre la copie de l'acte authentique en haute qualité avec sa transcription et sa traduction. Un format que vous pouvez imprimer, encadrer, partager avec la famille ou conserver tel quel.</p>
+      </details>
+      <details>
         <summary>Que se passe-t-il si une lignée ne peut pas être remontée jusqu'à l'époque choisie ?</summary>
         <p>Cela arrive : registres détruits, lacunes, incendies d'archives. Dans ce cas, vous ne payez qu'au prorata de ce qui a été effectivement retrouvé et documenté. Si rien n'est trouvé, vous ne payez rien, quel que soit le temps que j'y ai passé.</p>
       </details>
@@ -437,7 +462,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:3px solid var(-
     <h2 class="titre">Racontez-moi votre histoire familiale</h2>
     <p>Un nom de famille, un district dont on parlait à table, une date approximative : c'est souvent suffisant pour commencer. Mais donnez-moi tout ce que vous avez : noms des parents et de la fratrie, professions, vieux papiers, souvenirs même flous. Face aux innombrables homonymes portugais, chaque détail compte pour identifier les bons ancêtres. L'évaluation de faisabilité est gratuite et sans engagement.</p>
     <form class="formulaire" action="https://formsubmit.co/contact@exemple.fr" method="POST">
-      <input type="hidden" name="_subject" value="Nouvelle demande — genealogie-portugaise.fr">
+      <input type="hidden" name="_subject" value="Nouvelle demande via genealogie-portugaise.fr">
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <input type="hidden" name="_captcha" value="false">
       <label for="nom">Votre nom</label>
@@ -447,6 +472,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:3px solid var(-
       <label for="message">Votre histoire familiale</label>
       <textarea id="message" name="message" required placeholder="Noms et prénoms, village ou district d'origine, dates même approximatives, souvenirs, tout ce que vous savez…"></textarea>
       <button class="btn" type="submit">Envoyer ma demande</button>
+      <p style="font-size:.82rem;color:var(--gris);margin-top:10px">Vos informations ne servent qu'à traiter votre demande. Elles ne sont ni conservées à d'autres fins, ni transmises à des tiers. <a href="mentions-legales.html">En savoir plus</a></p>
     </form>
     <p class="alternative">Vous préférez le mail ? Écrivez-moi directement : <a href="mailto:contact@exemple.fr">contact@exemple.fr</a></p>
   </div>
@@ -457,7 +483,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:3px solid var(-
 <footer>
   <div class="wrap">
     <p><strong>Raízes</strong> · généalogie portugaise · recherche d'ancêtres dans les archives du Portugal · <a href="#contact">contact</a></p>
-    <p style="margin-top:4px">Généalogiste amateur. Recherches à caractère familial, non juridique.</p>
+    <p style="margin-top:4px">Généalogiste amateur. Recherches à caractère familial, non juridique. <a href="mentions-legales.html">Mentions légales</a></p>
   </div>
 </footer>
 
