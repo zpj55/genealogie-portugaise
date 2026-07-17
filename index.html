@@ -32,9 +32,10 @@
   "areaServed": [{"@type":"Country","name":"France"},{"@type":"Country","name":"Portugal"}],
   "availableLanguage": ["fr","pt"],
   "offers": [
-    {"@type":"Offer","name":"Quatre lignées jusqu'à 1850","price":"300","priceCurrency":"EUR"},
-    {"@type":"Offer","name":"Quatre lignées jusqu'à 1800","price":"400","priceCurrency":"EUR"},
-    {"@type":"Offer","name":"Quatre lignées, jusqu'à 1650-1700","price":"700","priceCurrency":"EUR"}
+    {"@type":"Offer","name":"Évaluation de faisabilité","price":"0","priceCurrency":"EUR"},
+    {"@type":"Offer","name":"Quatre lignées jusqu'à 1850","price":"350","priceCurrency":"EUR"},
+    {"@type":"Offer","name":"Quatre lignées jusqu'à 1800","price":"490","priceCurrency":"EUR"},
+    {"@type":"Offer","name":"Quatre lignées, jusqu'à 1650-1700","price":"790","priceCurrency":"EUR"}
   ]
 }
 </script>
@@ -73,27 +74,28 @@
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bleu:#1E4C96;
-  --bleu-fonce:#14335F;
-  --papier:#FCFBF7;
-  --encre:#2A2E38;
-  --gris:#5C6270;
-  --filet:#E3E0D6;
+  --bleu:#2C5D8C;
+  --bleu-fonce:#13294B;
+  --papier:#F2F4F5;
+  --encre:#1B2330;
+  --gris:#57626D;
+  --filet:#D8DCE0;
+  --ouro:#A6763B;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 html,body{overflow-x:hidden;max-width:100%}
 body{
-  font-family:'Source Sans 3',sans-serif;
+  font-family:'Work Sans',sans-serif;
   color:var(--encre);
   background:var(--papier);
   line-height:1.7;
   font-size:17.5px;
 }
-h1,h2,h3{font-family:'EB Garamond',serif;font-weight:500;line-height:1.2;color:var(--bleu-fonce)}
+h1,h2,h3{font-family:'Spectral',serif;font-weight:500;line-height:1.2;color:var(--bleu-fonce)}
 a{color:var(--bleu)}
 .wrap{max-width:920px;margin:0 auto;padding:0 26px}
 
@@ -107,7 +109,7 @@ a{color:var(--bleu)}
 /* ---------- entête ---------- */
 header{background:var(--papier);border-bottom:1px solid var(--filet);position:sticky;top:0;z-index:100}
 .nav{display:flex;align-items:baseline;justify-content:space-between;padding-top:20px;padding-bottom:20px;flex-wrap:wrap;gap:10px}
-.logo{font-family:'EB Garamond',serif;font-weight:600;font-size:1.5rem;color:var(--bleu-fonce);text-decoration:none}
+.logo{font-family:'Spectral',serif;font-weight:600;font-size:1.5rem;color:var(--bleu-fonce);text-decoration:none}
 .logo span{font-style:italic;font-weight:400;font-size:1rem;color:var(--gris);margin-left:8px}
 nav.menu{display:flex;gap:22px;flex-wrap:wrap}
 nav.menu a{text-decoration:none;color:var(--encre);font-size:.92rem}
@@ -121,7 +123,7 @@ nav.menu a:hover{color:var(--bleu);text-decoration:underline}
   nav.menu{
     display:none;position:absolute;left:0;right:0;top:100%;
     background:var(--papier);border-bottom:1px solid var(--filet);
-    flex-direction:column;gap:0;padding:6px 0;box-shadow:0 8px 16px rgba(20,51,95,.08);
+    flex-direction:column;gap:0;padding:6px 0;box-shadow:0 8px 16px rgba(19,41,75,.10);
   }
   nav.menu.ouvert{display:flex}
   nav.menu a{padding:13px 26px;font-size:1.02rem;border-top:1px solid var(--filet)}
@@ -130,13 +132,13 @@ nav.menu a:hover{color:var(--bleu);text-decoration:underline}
 
 /* ---------- hero ---------- */
 .hero{padding:70px 0 60px}
-.hero .surtitre{font-size:.85rem;letter-spacing:.16em;text-transform:uppercase;color:var(--bleu);margin-bottom:20px}
+.hero .surtitre{font-size:.85rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ouro);margin-bottom:20px}
 .hero h1{font-size:clamp(2rem,4.5vw,3rem);margin-bottom:24px;max-width:15em}
 .hero h1 em{font-style:italic;color:var(--bleu)}
 .hero .lead{font-size:1.12rem;max-width:36em;margin-bottom:14px}
 .hero .resultat{
-  font-family:'EB Garamond',serif;font-style:italic;font-size:1.15rem;color:var(--bleu-fonce);
-  margin:26px 0 32px;padding-left:18px;border-left:3px solid var(--bleu);max-width:30em;
+  font-family:'Spectral',serif;font-style:italic;font-size:1.15rem;color:var(--bleu-fonce);
+  margin:26px 0 32px;padding-left:18px;border-left:3px solid var(--ouro);max-width:30em;
 }
 .btn{
   display:inline-block;background:var(--bleu);color:#fff;text-decoration:none;
@@ -152,7 +154,7 @@ nav.menu a:hover{color:var(--bleu);text-decoration:underline}
 /* ---------- sections ---------- */
 section{padding:64px 0;border-top:1px solid var(--filet)}
 .titre{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:8px}
-.soustitre{font-family:'EB Garamond',serif;font-style:italic;color:var(--gris);font-size:1.05rem;margin-bottom:34px}
+.soustitre{font-family:'Spectral',serif;font-style:italic;color:var(--gris);font-size:1.05rem;margin-bottom:34px}
 p+p{margin-top:14px}
 
 /* spécialité : deux colonnes prose */
@@ -167,7 +169,7 @@ p+p{margin-top:14px}
   box-shadow:2px 3px 0 var(--filet);margin-top:8px;
 }
 .acte .entete{font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;color:var(--gris);margin-bottom:16px;border-bottom:1px solid var(--filet);padding-bottom:10px}
-.acte .vieux{font-family:'EB Garamond',serif;font-style:italic;font-size:1.05rem;color:#453A28;margin-bottom:18px}
+.acte .vieux{font-family:'Spectral',serif;font-style:italic;font-size:1.05rem;color:#453A28;margin-bottom:18px}
 .acte .trad{font-size:.98rem}
 .acte .mention{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bleu);display:block;margin-bottom:6px}
 .rendu-flex{display:flex;gap:48px;align-items:flex-start}
@@ -181,10 +183,10 @@ p+p{margin-top:14px}
 }
 .etapes li::before{
   content:counter(etape);position:absolute;left:0;top:2px;
-  font-family:'EB Garamond',serif;font-size:1.7rem;color:var(--bleu);font-weight:500;
+  font-family:'Spectral',serif;font-size:1.7rem;color:var(--bleu);font-weight:500;
   width:36px;text-align:right;
 }
-.etapes li strong{font-family:'EB Garamond',serif;font-weight:600;font-size:1.1rem;color:var(--bleu-fonce);display:block;margin-bottom:2px}
+.etapes li strong{font-family:'Spectral',serif;font-weight:600;font-size:1.1rem;color:var(--bleu-fonce);display:block;margin-bottom:2px}
 
 /* ---------- tarifs : présentation type document ---------- */
 .tarif-doc{
@@ -196,12 +198,14 @@ p+p{margin-top:14px}
 .tarif-doc .quoi p{font-size:1.02rem}
 .ligne-tarif{
   display:flex;justify-content:space-between;align-items:baseline;gap:16px;
-  padding:16px 0;border-top:1px dotted #C9C4B4;
+  padding:16px 0;border-top:1px dotted #C7CCD2;
 }
-.ligne-tarif:last-of-type{border-bottom:1px dotted #C9C4B4}
-.ligne-tarif .desc strong{font-family:'EB Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--bleu-fonce)}
+.ligne-tarif:last-of-type{border-bottom:1px dotted #C7CCD2}
+.ligne-tarif .desc strong{font-family:'Spectral',serif;font-size:1.15rem;font-weight:600;color:var(--bleu-fonce)}
 .ligne-tarif .desc span{display:block;font-size:.9rem;color:var(--gris)}
-.ligne-tarif .prix{font-family:'EB Garamond',serif;font-size:1.5rem;color:var(--bleu);white-space:nowrap}
+.ligne-tarif .desc span em{font-style:italic;color:var(--ouro)}
+.ligne-tarif .prix{font-family:'Spectral',serif;font-size:1.5rem;color:var(--ouro);white-space:nowrap;text-align:right}
+.ligne-tarif.gratuite .prix{color:var(--bleu-fonce)}
 .prorata{
   margin-top:26px;padding:18px 20px;background:var(--papier);border-left:3px solid var(--bleu);
   font-size:.96rem;
@@ -218,7 +222,7 @@ p+p{margin-top:14px}
 .faq{max-width:720px}
 .faq details{border-bottom:1px solid var(--filet);padding:4px 0}
 .faq summary{
-  cursor:pointer;font-family:'EB Garamond',serif;font-weight:600;font-size:1.08rem;
+  cursor:pointer;font-family:'Spectral',serif;font-weight:600;font-size:1.08rem;
   color:var(--bleu-fonce);padding:14px 0;list-style:none;
 }
 .faq summary::-webkit-details-marker{display:none}
@@ -230,12 +234,12 @@ p+p{margin-top:14px}
 .formulaire{max-width:560px}
 .formulaire label{display:block;font-weight:600;font-size:.92rem;margin-bottom:5px;color:var(--bleu-fonce)}
 .formulaire input,.formulaire textarea{
-  width:100%;padding:11px 13px;margin-bottom:16px;font-family:'Source Sans 3',sans-serif;
-  font-size:1rem;color:var(--encre);background:#fff;border:1px solid #C9C4B4;
+  width:100%;padding:11px 13px;margin-bottom:16px;font-family:'Work Sans',sans-serif;
+  font-size:1rem;color:var(--encre);background:#fff;border:1px solid #C7CCD2;
 }
 .formulaire input:focus,.formulaire textarea:focus{outline:2px solid var(--bleu);border-color:var(--bleu)}
 .formulaire textarea{min-height:140px;resize:vertical}
-.formulaire .btn{border:none;cursor:pointer;font-family:'Source Sans 3',sans-serif}
+.formulaire .btn{border:none;cursor:pointer;font-family:'Work Sans',sans-serif}
 .contact .alternative{font-size:.9rem;color:var(--gris);margin-top:14px}
 
 /* pied de page */
@@ -301,18 +305,18 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:3px solid var(-
     </div>
     <div class="hero-tile" aria-hidden="true">
       <svg viewBox="0 0 300 300" fill="none" role="img" aria-label="Azulejo représentant un arbre généalogique">
-        <rect width="300" height="300" fill="#1E4C96"/>
-        <rect x="12" y="12" width="276" height="276" fill="none" stroke="#FCFBF7" stroke-width="2"/>
-        <path d="M150 252 L150 160" stroke="#FCFBF7" stroke-width="5" stroke-linecap="round"/>
-        <path d="M150 160 C120 140 100 145 75 120 M150 160 C180 140 200 145 225 120 M150 192 C125 182 110 187 90 172 M150 192 C175 182 190 187 210 172" stroke="#FCFBF7" stroke-width="4" stroke-linecap="round" fill="none"/>
-        <circle cx="75" cy="115" r="13" fill="#FCFBF7"/>
-        <circle cx="225" cy="115" r="13" fill="#FCFBF7"/>
-        <circle cx="90" cy="170" r="9" fill="#FCFBF7"/>
-        <circle cx="210" cy="170" r="9" fill="#FCFBF7"/>
-        <circle cx="150" cy="96" r="16" fill="#FCFBF7"/>
-        <path d="M150 160 L150 114" stroke="#FCFBF7" stroke-width="4" stroke-linecap="round"/>
-        <path d="M112 252 Q150 232 188 252" stroke="#FCFBF7" stroke-width="3" fill="none"/>
-        <path d="M12 44 Q44 44 44 12 M288 44 Q256 44 256 12 M12 256 Q44 256 44 288 M288 256 Q256 256 256 288" stroke="#FCFBF7" stroke-width="1.5" fill="none"/>
+        <rect width="300" height="300" fill="#2C5D8C"/>
+        <rect x="12" y="12" width="276" height="276" fill="none" stroke="#F2F4F5" stroke-width="2"/>
+        <path d="M150 252 L150 160" stroke="#F2F4F5" stroke-width="5" stroke-linecap="round"/>
+        <path d="M150 160 C120 140 100 145 75 120 M150 160 C180 140 200 145 225 120 M150 192 C125 182 110 187 90 172 M150 192 C175 182 190 187 210 172" stroke="#F2F4F5" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <circle cx="75" cy="115" r="13" fill="#F2F4F5"/>
+        <circle cx="225" cy="115" r="13" fill="#F2F4F5"/>
+        <circle cx="90" cy="170" r="9" fill="#F2F4F5"/>
+        <circle cx="210" cy="170" r="9" fill="#F2F4F5"/>
+        <circle cx="150" cy="96" r="16" fill="#F2F4F5"/>
+        <path d="M150 160 L150 114" stroke="#F2F4F5" stroke-width="4" stroke-linecap="round"/>
+        <path d="M112 252 Q150 232 188 252" stroke="#F2F4F5" stroke-width="3" fill="none"/>
+        <path d="M12 44 Q44 44 44 12 M288 44 Q256 44 256 12 M12 256 Q44 256 44 288 M288 256 Q256 256 256 288" stroke="#F2F4F5" stroke-width="1.5" fill="none"/>
       </svg>
     </div>
   </div>
@@ -348,9 +352,6 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:3px solid var(-
         <p>Pour chaque ancêtre retrouvé, votre dossier contient la copie de l'acte authentique tel qu'il figure dans les archives portugaises, sa transcription, déchiffrée depuis l'écriture manuscrite ancienne quand l'état du document le permet, et sa traduction en français, pour que toute la famille puisse la lire.</p>
         <p>Le tout est réuni dans un arbre généalogique mis en forme avec soin, où chaque personne est reliée à ses sources. Un document pensé pour être conservé, encadré, transmis.</p>
       </div>
-      <!-- CONSEIL : remplacez cette maquette par la photo d'un VRAI acte de votre propre famille
-           (scan du registre manuscrit) suivi de votre transcription et traduction.
-           C'est votre meilleure preuve de savoir-faire. -->
       <div class="acte" aria-label="Exemple de rendu : extrait d'acte avec sa traduction">
         <div class="entete">Exemple : acte de baptême, paroisse de São Pedro, 1834</div>
         <p class="vieux">« Aos vinte e três dias do mês de Maio de mil oitocentos e trinta e quatro, baptizei solenemente a Manuel, filho legítimo de José Ferreira e de Maria da Conceição… »</p>
@@ -379,23 +380,27 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:3px solid var(-
 <section id="tarif">
   <div class="wrap">
     <h2 class="titre">Le tarif</h2>
-    <p class="soustitre">Une seule recherche, trois profondeurs. Vous payez au résultat.</p>
+    <p class="soustitre">Une évaluation offerte, trois profondeurs de recherche. Vous payez au résultat.</p>
     <div class="tarif-doc">
       <div class="quoi">
         <p><strong>La recherche porte sur vos quatre lignées de nom</strong> : pour chacun de vos quatre grands-parents, je remonte sa lignée de père en père, dans les archives portugaises, jusqu'à l'époque choisie. À chaque génération, l'épouse est identifiée et mentionnée dans l'arbre quand les actes le permettent.</p>
         <p style="margin-top:12px;font-size:.95rem;color:var(--gris)">Vous préférez suivre une lignée de mère en mère, ou une lignée particulière qui vous tient à cœur ? C'est possible : le choix des quatre lignées se fait ensemble, au moment de l'évaluation gratuite, sans changer le tarif.</p>
       </div>
-      <div class="ligne-tarif">
-        <div class="desc"><strong>Jusqu'à 1850</strong><span>Les quatre lignées remontées de père en père jusqu'aux ancêtres nés vers 1850.</span></div>
-        <div class="prix">300&nbsp;€</div>
+      <div class="ligne-tarif gratuite">
+        <div class="desc"><strong>L'évaluation</strong><span>Analyse de faisabilité, recherche de la commune d'origine, vérification de l'état des archives locales. <em>Valeur estimée : 49&nbsp;€.</em></span></div>
+        <div class="prix">Offerte</div>
       </div>
       <div class="ligne-tarif">
-        <div class="desc"><strong>Jusqu'à 1800</strong><span>Les quatre lignées remontées jusqu'aux ancêtres nés vers 1800.</span></div>
-        <div class="prix">400&nbsp;€</div>
+        <div class="desc"><strong>Horizon 1850</strong><span>Les quatre lignées remontées de père en père sur environ 150 ans, jusqu'aux ancêtres nés vers 1850 : les débuts de l'état civil portugais.</span></div>
+        <div class="prix">350&nbsp;€</div>
       </div>
       <div class="ligne-tarif">
-        <div class="desc"><strong>Jusqu'à 1650/1700</strong><span>Les quatre lignées remontées aussi loin que les archives le permettent, souvent au-delà de 1750. Si les archives s'arrêtent plus tôt, le prix est ramené au prorata : vous ne payez jamais 700&nbsp;€ pour un résultat équivalent à une formule inférieure.</span></div>
-        <div class="prix">700&nbsp;€</div>
+        <div class="desc"><strong>Horizon 1800</strong><span>Les quatre lignées remontées sur 220 ans, jusqu'aux ancêtres nés vers 1800 : le passage aux registres paroissiaux.</span></div>
+        <div class="prix">490&nbsp;€</div>
+      </div>
+      <div class="ligne-tarif">
+        <div class="desc"><strong>Horizon 1650/1700</strong><span>Les quatre lignées remontées aussi loin que les archives le permettent, souvent au-delà de 1750, en pleine paléographie du vieux portugais. Si elles s'arrêtent plus tôt, le prix est ramené au prorata.</span></div>
+        <div class="prix">790&nbsp;€</div>
       </div>
       <div class="prorata">
         <p><strong>Paiement au résultat.</strong> Le prix indiqué n'est dû que si l'arbre convenu est complet. Si certaines lignées s'arrêtent avant l'époque choisie (registres détruits, lacunes d'archives), vous ne payez qu'au prorata des ancêtres effectivement retrouvés et documentés. Rien trouvé, rien payé.</p>
@@ -410,10 +415,9 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:3px solid var(-
     <h2 class="titre">Un passionné, pas un cabinet</h2>
     <p class="soustitre">Et je préfère le dire clairement.</p>
     <div class="portrait-flex">
-      <!-- REMPLACEZ le src ci-dessous par une vraie photo de vous (idéalement carrée, 400x400 px min) -->
       <img class="portrait" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%231E4C96'/%3E%3Ccircle cx='100' cy='78' r='34' fill='%23FCFBF7'/%3E%3Cpath d='M40 178 C40 130 160 130 160 178 Z' fill='%23FCFBF7'/%3E%3C/svg%3E" alt="Julien, généalogiste spécialisé dans les archives portugaises" width="180" height="180">
       <div>
-        <p>Je m'appelle <strong>Julien</strong>, et je suis un généalogiste amateur, au sens propre du mot : celui qui aime. La généalogie portugaise est ma passion depuis que j'ai reconstitué mon propre arbre familial dans les archives du Portugal, paroisse par paroisse, acte par acte, jusqu'au XVII<sup>e</sup> siècle. <!-- Personnalisez ici : votre district/village d'origine, ex. "Ma famille vient du district de Braga..." --></p>
+        <p>Je m'appelle <strong>Julien</strong>, et je suis un généalogiste amateur, au sens propre du mot : celui qui aime. La généalogie portugaise est ma passion depuis que j'ai reconstitué mon propre arbre familial dans les archives du Portugal, paroisse par paroisse, acte par acte, jusqu'au XVII<sup>e</sup> siècle.</p>
         <p>C'est cette expérience qui m'a appris à naviguer dans les fonds portugais, à déchiffrer l'écriture ancienne des curés et à recouper les informations quand les registres sont lacunaires.</p>
         <p>Ce fonctionnement indépendant a un avantage direct pour vous : des tarifs bien plus accessibles qu'un cabinet, et un paiement au résultat que peu de professionnels acceptent de proposer. En échange, je vous demande un peu de patience : je consacre à chaque famille le temps qu'il faut, pas le temps qu'on facture.</p>
       </div>
