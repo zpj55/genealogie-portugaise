@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Blog généalogie portugaise : guides et conseils de recherche | Raízes</title>
+<meta name="description" content="Guides pratiques pour retrouver vos ancêtres portugais : actes d'état civil, registres paroissiaux, archives des districts, astuces de recherche pour lusodescendants.">
+<link rel="canonical" href="https://genealogie-portugaise.fr/blog/">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Blog généalogie portugaise | Raízes">
+<meta property="og:description" content="Guides pratiques pour retrouver vos ancêtres portugais dans les archives du Portugal.">
+<meta property="og:url" content="https://genealogie-portugaise.fr/blog/">
+<meta property="og:site_name" content="Raízes, généalogie portugaise">
+<meta property="og:image" content="https://genealogie-portugaise.fr/og-image.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicon-96.png" sizes="96x96">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bleu:#2C5D8C;
+  --bleu-fonce:#13294B;
+  --papier:#F2F4F5;
+  --encre:#1B2330;
+  --gris:#57626D;
+  --filet:#D8DCE0;
+  --ouro:#A6763B;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:hidden;max-width:100%}
+body{
+  font-family:'Work Sans',sans-serif;
+  color:var(--encre);
+  background:var(--papier);
+  line-height:1.7;
+  font-size:17.5px;
+}
+h1,h2,h3{font-family:'Spectral',serif;font-weight:500;line-height:1.2;color:var(--bleu-fonce)}
+a{color:var(--bleu)}
+.wrap{max-width:920px;margin:0 auto;padding:0 26px}
+
+.azulejo{
+  height:30px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Crect width='30' height='30' fill='%231E4C96'/%3E%3Cpath d='M15 3.5 C18.5 8 22 8 26.5 7 C24 11.5 24 14 26.5 15 C22 16 18.5 16 15 21 C11.5 16 8 16 3.5 15 C6 14 6 11.5 3.5 7 C8 8 11.5 8 15 3.5 Z' fill='none' stroke='%23FCFBF7' stroke-width='1.2'/%3E%3Ccircle cx='15' cy='15' r='1.9' fill='%23FCFBF7'/%3E%3C/svg%3E");
+  background-size:30px 30px;
+}
+
+header{background:var(--papier);border-bottom:1px solid var(--filet);position:sticky;top:0;z-index:100}
+.nav{display:flex;align-items:baseline;justify-content:space-between;padding-top:20px;padding-bottom:20px;flex-wrap:wrap;gap:10px}
+.logo{font-family:'Spectral',serif;font-weight:600;font-size:1.5rem;color:var(--bleu-fonce);text-decoration:none}
+.logo span{font-style:italic;font-weight:400;font-size:1rem;color:var(--gris);margin-left:8px}
+nav.menu{display:flex;gap:22px;flex-wrap:wrap}
+nav.menu a{text-decoration:none;color:var(--encre);font-size:.92rem}
+nav.menu a:hover{color:var(--bleu);text-decoration:underline}
+.burger{display:none;background:none;border:1px solid var(--filet);padding:8px 12px;cursor:pointer;font-size:1.15rem;color:var(--bleu-fonce);line-height:1}
+@media(max-width:640px){
+  .nav{padding-top:12px;padding-bottom:12px;flex-wrap:nowrap;align-items:center}
+  .logo{font-size:1.25rem}
+  .logo span{display:block;margin-left:0;font-size:.78rem;line-height:1.2}
+  .burger{display:block}
+  nav.menu{
+    display:none;position:absolute;left:0;right:0;top:100%;
+    background:var(--papier);border-bottom:1px solid var(--filet);
+    flex-direction:column;gap:0;padding:6px 0;box-shadow:0 8px 16px rgba(19,41,75,.10);
+  }
+  nav.menu.ouvert{display:flex}
+  nav.menu a{padding:13px 26px;font-size:1.02rem;border-top:1px solid var(--filet)}
+  nav.menu a:first-child{border-top:none}
+}
+
+.entete-blog{padding:56px 0 8px}
+.entete-blog h1{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:10px}
+.entete-blog p{font-family:'Spectral',serif;font-style:italic;color:var(--gris);max-width:38em}
+
+.liste-articles{padding:34px 0 64px}
+.carte-article{
+  display:block;background:#fff;border:1px solid var(--filet);box-shadow:2px 3px 0 var(--filet);
+  padding:26px 30px;margin-bottom:22px;text-decoration:none;color:var(--encre);max-width:720px;
+}
+.carte-article:hover h2{color:var(--bleu)}
+.carte-article .date{font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;color:var(--gris);display:block;margin-bottom:8px}
+.carte-article h2{font-size:1.3rem;margin-bottom:8px}
+.carte-article p{font-size:.97rem;color:var(--gris)}
+.carte-article .lire{display:inline-block;margin-top:12px;color:var(--ouro);font-size:.9rem;font-weight:600}
+
+footer{border-top:1px solid var(--filet);padding:30px 0 26px;font-size:.85rem;color:var(--gris)}
+footer a{color:var(--gris)}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--bleu);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media(max-width:640px){
+  body{font-size:16px;line-height:1.6}
+  .entete-blog{padding:32px 0 4px}
+  .liste-articles{padding:22px 0 40px}
+  .carte-article{padding:20px 18px}
+  footer{padding:20px 0 18px}
+}
+</style>
+</head>
+<body>
+
+<div class="azulejo" aria-hidden="true"></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/">Raízes<span>généalogie portugaise</span></a>
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-principal" onclick="var m=document.getElementById('menu-principal');var o=m.classList.toggle('ouvert');this.setAttribute('aria-expanded',o);this.textContent=o?'\u2715':'\u2630'">&#9776;</button>
+    <nav class="menu" id="menu-principal" aria-label="Navigation principale">
+      <a href="/#specialite">Spécialité</a>
+      <a href="/#rendu">Le rendu</a>
+      <a href="/#methode">Méthode</a>
+      <a href="/#tarif">Tarif</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<div class="entete-blog">
+  <div class="wrap">
+    <h1>Le blog Raízes</h1>
+    <p>Guides pratiques et conseils de recherche pour retrouver vos ancêtres dans les archives du Portugal.</p>
+  </div>
+</div>
+
+<div class="liste-articles">
+  <div class="wrap">
+
+    <a class="carte-article" href="/blog/acte-naissance-portugais/">
+      <span class="date">19 juillet 2026</span>
+      <h2>Comment obtenir un acte de naissance portugais depuis la France</h2>
+      <p>Demande en ligne via Civil Online, courrier à la Conservatória, archives des districts pour les actes anciens : le guide pas à pas, avec un modèle de courrier en portugais prêt à l'emploi.</p>
+      <span class="lire">Lire le guide →</span>
+    </a>
+
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Raízes</strong> · généalogie portugaise · recherche d'ancêtres dans les archives du Portugal · <a href="/#contact">contact</a> · <a href="/mentions-legales.html">mentions légales</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
