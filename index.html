@@ -492,27 +492,27 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:3px solid var(-
   <div class="wrap">
     <h2 class="titre">Racontez-moi votre histoire familiale</h2>
     <p>Un nom de famille, un district dont on parlait à table, une date approximative : c'est souvent suffisant pour commencer. Mais donnez-moi tout ce que vous avez : noms des parents et de la fratrie, professions, vieux papiers, souvenirs même flous. Face aux innombrables homonymes portugais, chaque détail compte pour identifier les bons ancêtres. L'évaluation de faisabilité est gratuite et sans engagement.</p>
-    <form action="https://formsubmit.co/genealogie.portugaise@gmail.com" method="POST">
+    <form class="formulaire" action="https://formsubmit.co/genealogie.portugaise@gmail.com" method="POST">
       <input type="hidden" name="_next" value="https://genealogie-portugaise.fr/merci.html">
       <input type="hidden" name="_subject" value="Nouvelle demande via genealogie-portugaise.fr">
-    
+
       <input type="text" name="nom" placeholder="Votre nom" required>
       <input type="email" name="email" placeholder="Votre adresse mail" required>
-    
+
       <input type="text" name="ancetre_portugais" required
-        placeholder="Votre ancêtre portugais : nom, lien de parenté, région d'origine si connue">
-    
+        placeholder="Votre ancêtre portugais : nom, région d'origine">
+
       <select name="type_recherche">
         <option value="" disabled selected>Type de recherche souhaitée</option>
         <option>Arbre généalogique complet</option>
         <option>Retrouver un ancêtre précis</option>
         <option>Je ne sais pas encore</option>
       </select>
-    
+
       <textarea name="informations" rows="4"
         placeholder="Ce que vous savez déjà : dates même approximatives, noms des parents, village, vieux papiers, souvenirs de famille..."></textarea>
-    
-      <button type="submit">Envoyer ma demande</button>
+
+      <button type="submit" class="btn">Envoyer ma demande</button>
     </form>
     <p class="alternative">Vous préférez le mail ? Écrivez-moi directement : <a href="mailto:genealogie.portugaise@gmail.com">genealogie.portugaise@gmail.com</a></p>
   </div>
