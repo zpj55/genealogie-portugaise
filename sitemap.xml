@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://genealogie-portugaise.fr/blog/</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -21,6 +21,12 @@
   <url>
     <loc>https://genealogie-portugaise.fr/blog/nationalite-portugaise-filiation/</loc>
     <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://genealogie-portugaise.fr/blog/cristaos-novos-inquisition-genealogie/</loc>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
