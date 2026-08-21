@@ -125,6 +125,7 @@ header{background:var(--papier);border-bottom:1px solid var(--filet);position:st
 nav.menu{display:flex;gap:22px;flex-wrap:wrap}
 nav.menu a{text-decoration:none;color:var(--encre);font-size:.92rem}
 nav.menu a:hover{color:var(--bleu);text-decoration:underline}
+nav.menu a.actif{color:var(--bleu);font-weight:600}  
 .burger{display:none;background:none;border:1px solid var(--filet);padding:8px 12px;cursor:pointer;font-size:1.15rem;color:var(--bleu-fonce);line-height:1}
 @media(max-width:640px){
   .nav{padding-top:12px;padding-bottom:12px;flex-wrap:nowrap;align-items:center}
@@ -541,6 +542,45 @@ document.querySelectorAll('#menu-principal a').forEach(function(a){
     b.innerHTML='&#9776;';
   });
 });
+// Scrollspy : allume le lien du menu correspondant à la section visible (PC uniquement)
+(function(){
+  if(window.matchMedia('(max-width:640px)').matches) return;
+
+  var liens=document.querySelectorAll('#menu-principal a[href^="#"]');
+  if(!liens.length) return;
+
+  var sections=[];
+  liens.forEach(function(lien){
+    var section=document.querySelector(lien.getAttribute('href'));
+    if(section) sections.push({lien:lien,section:section});
+  });
+  if(!sections.length) return;
+
+  var header=document.querySelector('header');
+
+  function activer(){
+    var decalage=(header?header.offsetHeight:0)+40;
+    var position=window.scrollY+decalage;
+    var courant=null;
+
+    sections.forEach(function(s){
+      if(s.section.offsetTop<=position) courant=s;
+    });
+
+    liens.forEach(function(l){l.classList.remove('actif')});
+    if(courant) courant.lien.classList.add('actif');
+  }
+
+  var ticket=false;
+  window.addEventListener('scroll',function(){
+    if(!ticket){
+      window.requestAnimationFrame(function(){activer();ticket=false});
+      ticket=true;
+    }
+  });
+  window.addEventListener('resize',activer);
+  activer();
+})();  
 </script>
 </body>
 </html>
