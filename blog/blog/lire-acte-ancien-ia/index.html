@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18337424756"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18337424756');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============ SEO ============ -->
+<title>Lire un acte ancien portugais avec l'IA : Gemini, Transkribus et leurs limites | Raízes</title>
+<meta name="description" content="Registre paroissial illisible ? Google Gemini transcrit aujourd'hui l'écriture manuscrite ancienne avec une précision proche d'un humain. Méthode pas à pas, prompt prêt à l'emploi, et les erreurs à vérifier sur les actes portugais.">
+<link rel="canonical" href="https://genealogie-portugaise.fr/blog/lire-acte-ancien-ia/">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Lire un acte ancien portugais avec l'IA : ce que Google Gemini sait faire">
+<meta property="og:description" content="Transcrire un registre paroissial portugais du XVIIIe ou XIXe siècle avec Gemini : méthode, prompt prêt à l'emploi, et les pièges sur les noms, les dates et les mentions marginales.">
+<meta property="og:url" content="https://genealogie-portugaise.fr/blog/lire-acte-ancien-ia/">
+<meta property="og:site_name" content="Raízes, généalogie portugaise">
+<meta property="og:image" content="https://genealogie-portugaise.fr/og-image.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicon-96.png" sizes="96x96">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Lire un acte ancien portugais avec l'intelligence artificielle : ce que Google Gemini sait faire, et ce qu'il faut vérifier",
+  "description": "Méthode pour transcrire et traduire un registre paroissial portugais ancien avec Google Gemini ou Transkribus, et liste des erreurs typiques à contrôler.",
+  "inLanguage": "fr",
+  "datePublished": "2026-10-15",
+  "dateModified": "2026-10-15",
+  "author": {"@type": "Person", "name": "Julien", "url": "https://genealogie-portugaise.fr/"},
+  "publisher": {"@type": "Organization", "name": "Raízes, généalogie portugaise", "url": "https://genealogie-portugaise.fr/"},
+  "mainEntityOfPage": "https://genealogie-portugaise.fr/blog/lire-acte-ancien-ia/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Accueil","item":"https://genealogie-portugaise.fr/"},
+    {"@type":"ListItem","position":2,"name":"Blog","item":"https://genealogie-portugaise.fr/blog/"},
+    {"@type":"ListItem","position":3,"name":"Lire un acte ancien avec l'IA","item":"https://genealogie-portugaise.fr/blog/lire-acte-ancien-ia/"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quelle IA est la meilleure pour lire une écriture manuscrite ancienne ?",
+      "acceptedAnswer": {"@type":"Answer","text":"Les tests publiés depuis fin 2025 placent Google Gemini, dans ses versions Pro, nettement devant les autres grands modèles généralistes pour la transcription de manuscrits anciens. Sur un corpus de documents des XVIIIe et XIXe siècles, Gemini 3 Pro a obtenu un taux d'erreur par caractère d'environ 1,7 %, proche d'un dactylographe professionnel. Transkribus reste pertinent pour traiter de gros volumes avec un modèle entraîné sur un fonds précis."}
+    },
+    {
+      "@type": "Question",
+      "name": "Gemini est-il gratuit pour transcrire des actes ?",
+      "acceptedAnswer": {"@type":"Answer","text":"Google AI Studio permet d'utiliser les modèles Gemini gratuitement, dans des limites d'usage largement suffisantes pour transcrire quelques dizaines d'actes. Par l'API payante, le coût tourne autour d'un centime par page."}
+    },
+    {
+      "@type": "Question",
+      "name": "Peut-on faire confiance à une transcription faite par l'IA ?",
+      "acceptedAnswer": {"@type":"Answer","text":"Comme base de travail, oui. Comme preuve, non sans relecture. Les erreurs résiduelles portent précisément sur ce qui compte en généalogie : noms de famille rares, toponymes, dates écrites en toutes lettres, mentions marginales. Chaque nom, date et lien de filiation doit être vérifié contre l'image de l'acte."}
+    },
+    {
+      "@type": "Question",
+      "name": "L'IA peut-elle trouver l'acte de mon ancêtre à ma place ?",
+      "acceptedAnswer": {"@type":"Answer","text":"Non. L'IA lit une image qu'on lui fournit. Identifier la bonne freguesia, le bon registre et le bon acte parmi des homonymes reste un travail de recherche que la transcription automatique ne fait pas."}
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bleu:#2C5D8C;
+  --bleu-fonce:#13294B;
+  --papier:#F2F4F5;
+  --encre:#1B2330;
+  --gris:#57626D;
+  --filet:#D8DCE0;
+  --ouro:#A6763B;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:hidden;max-width:100%}
+body{
+  font-family:'Work Sans',sans-serif;
+  color:var(--encre);
+  background:var(--papier);
+  line-height:1.7;
+  font-size:17.5px;
+}
+h1,h2,h3{font-family:'Spectral',serif;font-weight:500;line-height:1.2;color:var(--bleu-fonce)}
+a{color:var(--bleu)}
+.wrap{max-width:920px;margin:0 auto;padding:0 26px}
+
+.azulejo{
+  height:30px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Crect width='30' height='30' fill='%231E4C96'/%3E%3Cpath d='M15 3.5 C18.5 8 22 8 26.5 7 C24 11.5 24 14 26.5 15 C22 16 18.5 16 15 21 C11.5 16 8 16 3.5 15 C6 14 6 11.5 3.5 7 C8 8 11.5 8 15 3.5 Z' fill='none' stroke='%23FCFBF7' stroke-width='1.2'/%3E%3Ccircle cx='15' cy='15' r='1.9' fill='%23FCFBF7'/%3E%3C/svg%3E");
+  background-size:30px 30px;
+}
+
+header{background:var(--papier);border-bottom:1px solid var(--filet);position:sticky;top:0;z-index:100}
+.nav{display:flex;align-items:baseline;justify-content:space-between;padding-top:20px;padding-bottom:20px;flex-wrap:wrap;gap:10px}
+.logo{font-family:'Spectral',serif;font-weight:600;font-size:1.5rem;color:var(--bleu-fonce);text-decoration:none}
+.logo span{font-style:italic;font-weight:400;font-size:1rem;color:var(--gris);margin-left:8px}
+nav.menu{display:flex;gap:22px;flex-wrap:wrap}
+nav.menu a{text-decoration:none;color:var(--encre);font-size:.92rem}
+nav.menu a:hover{color:var(--bleu);text-decoration:underline}
+.burger{display:none;background:none;border:1px solid var(--filet);padding:8px 12px;cursor:pointer;font-size:1.15rem;color:var(--bleu-fonce);line-height:1}
+@media(max-width:640px){
+  .nav{padding-top:12px;padding-bottom:12px;flex-wrap:nowrap;align-items:center}
+  .logo{font-size:1.25rem}
+  .logo span{display:block;margin-left:0;font-size:.78rem;line-height:1.2}
+  .burger{display:block}
+  nav.menu{
+    display:none;position:absolute;left:0;right:0;top:100%;
+    background:var(--papier);border-bottom:1px solid var(--filet);
+    flex-direction:column;gap:0;padding:6px 0;box-shadow:0 8px 16px rgba(19,41,75,.10);
+  }
+  nav.menu.ouvert{display:flex}
+  nav.menu a{padding:13px 26px;font-size:1.02rem;border-top:1px solid var(--filet)}
+  nav.menu a:first-child{border-top:none}
+}
+
+/* ---------- article ---------- */
+.article{max-width:720px;margin:0 auto;padding:56px 26px 64px}
+.fil{font-size:.85rem;color:var(--gris);margin-bottom:26px}
+.fil a{color:var(--gris)}
+.article h1{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:14px}
+.article .chapo{font-family:'Spectral',serif;font-style:italic;font-size:1.15rem;color:var(--gris);margin-bottom:8px}
+.article .meta{font-size:.85rem;color:var(--gris);letter-spacing:.05em;text-transform:uppercase;margin-bottom:38px;padding-bottom:18px;border-bottom:1px solid var(--filet)}
+.article h2{font-size:1.5rem;margin:44px 0 14px}
+.article h3{font-size:1.15rem;margin:28px 0 8px}
+.article p+p{margin-top:14px}
+.article ul,.article ol{margin:14px 0 14px 24px}
+.article li{margin-bottom:8px}
+.article li::marker{color:var(--ouro)}
+
+.encart{
+  background:#fff;border:1px solid var(--filet);box-shadow:2px 3px 0 var(--filet);
+  padding:24px 28px;margin:26px 0;
+}
+.encart .entete{font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;color:var(--gris);margin-bottom:14px;border-bottom:1px solid var(--filet);padding-bottom:10px}
+.encart .pt{font-family:'Spectral',serif;font-style:italic;font-size:1.02rem;color:#453A28}
+.encart .pt p+p{margin-top:12px}
+.encart .fr{font-size:.9rem;color:var(--gris);margin-top:16px;padding-top:14px;border-top:1px dotted #C7CCD2}
+
+.prompt{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.86rem;line-height:1.6;
+  background:var(--papier);border:1px solid var(--filet);padding:16px 18px;white-space:pre-wrap;word-wrap:break-word;
+}
+
+table.abrev{width:100%;border-collapse:collapse;margin:8px 0 4px;font-size:.95rem}
+table.abrev th,table.abrev td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--filet);vertical-align:top}
+table.abrev th{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gris);font-weight:500}
+table.abrev td:first-child{font-family:'Spectral',serif;font-style:italic;color:#453A28;white-space:nowrap}
+
+.astuce{
+  margin:26px 0;padding:18px 20px;background:#fff;border-left:3px solid var(--ouro);
+  font-size:.97rem;
+}
+.astuce strong{color:var(--bleu-fonce)}
+
+.cta{
+  margin:48px 0 8px;padding:32px;background:#fff;border:1px solid var(--filet);
+  box-shadow:2px 3px 0 var(--filet);
+}
+.cta h2{margin:0 0 10px;font-size:1.35rem}
+.cta p{margin-bottom:20px}
+.btn{
+  display:inline-block;background:var(--bleu);color:#fff;text-decoration:none;
+  padding:13px 26px;font-size:1rem;font-weight:600;
+}
+.btn:hover{background:var(--bleu-fonce)}
+
+.faq-bloc{margin-top:48px;padding-top:12px;border-top:1px solid var(--filet)}
+.faq-bloc details{border-bottom:1px solid var(--filet);padding:4px 0}
+.faq-bloc summary{
+  cursor:pointer;font-family:'Spectral',serif;font-weight:600;font-size:1.08rem;
+  color:var(--bleu-fonce);padding:14px 0;list-style:none;
+}
+.faq-bloc summary::-webkit-details-marker{display:none}
+.faq-bloc details p{padding:0 0 18px;font-size:.97rem}
+
+footer{border-top:1px solid var(--filet);padding:30px 0 26px;font-size:.85rem;color:var(--gris)}
+footer a{color:var(--gris)}
+a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:3px solid var(--bleu);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media(max-width:640px){
+  body{font-size:16px;line-height:1.6}
+  .article{padding:32px 22px 40px}
+  .encart{padding:18px 16px}
+  .cta{padding:22px 18px}
+  table.abrev td:first-child{white-space:normal}
+  footer{padding:20px 0 18px}
+}
+</style>
+</head>
+<body>
+
+<div class="azulejo" aria-hidden="true"></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/">Raízes<span>généalogie portugaise</span></a>
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-principal" onclick="var m=document.getElementById('menu-principal');var o=m.classList.toggle('ouvert');this.setAttribute('aria-expanded',o);this.textContent=o?'✕':'☰'">&#9776;</button>
+    <nav class="menu" id="menu-principal" aria-label="Navigation principale">
+      <a href="/#specialite">Spécialité</a>
+      <a href="/#rendu">Le rendu</a>
+      <a href="/#methode">Méthode</a>
+      <a href="/#tarif">Tarif</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article class="article">
+
+  <p class="fil"><a href="/">Accueil</a> › <a href="/blog/">Blog</a> › Lire un acte ancien avec l'IA</p>
+
+  <h1>Lire un acte ancien portugais avec l'intelligence artificielle : ce que Google Gemini sait faire, et ce qu'il faut vérifier</h1>
+  <p class="chapo">Pendant des années, la paléographie a été le vrai mur de la généalogie portugaise. Les archives sont en ligne et gratuites, mais les actes restent illisibles pour qui n'a pas l'œil. Depuis fin 2025, ce mur s'est fissuré, et c'est Google qui a donné le coup le plus net.</p>
+  <p class="meta">Publié le 15 octobre 2026 · Raízes, généalogie portugaise</p>
+
+  <p>Vous avez retrouvé sur le portail des archives la page du registre paroissial où devrait figurer le baptême de votre arrière-arrière-grand-père. Vous zoomez. Vous reconnaissez peut-être un prénom, une date, le mot <em>baptizei</em>. Le reste est une succession de boucles, d'abréviations et de lettres qui ne ressemblent à rien. C'est l'expérience de presque tous ceux qui se lancent dans une recherche au Portugal.</p>
+
+  <p>La bonne nouvelle, c'est que les outils d'intelligence artificielle savent désormais lire ces documents avec une précision qu'on n'imaginait pas il y a deux ans. La moins bonne, c'est qu'ils se trompent exactement là où une erreur coûte le plus cher en généalogie. Voici comment s'en servir correctement.</p>
+
+  <h2>Pourquoi un acte portugais ancien est si difficile à lire</h2>
+
+  <p>La difficulté ne tient pas seulement à l'écriture. Elle s'empile en plusieurs couches :</p>
+
+  <ul>
+    <li><strong>La graphie.</strong> Écriture cursive du curé, souvent pressé, avec des formes de lettres qui ont changé depuis : le <em>s</em> long, le <em>e</em> qui ressemble à un <em>o</em>, les jambages qui se confondent.</li>
+    <li><strong>Les abréviations.</strong> Les prénoms et les mots fréquents sont presque toujours abrégés, avec une lettre suscrite qu'il faut savoir développer.</li>
+    <li><strong>L'orthographe flottante.</strong> Avant les réformes du XX<sup>e</sup> siècle, on écrit <em>Parochial</em>, <em>Joze</em>, <em>Thereza</em>, <em>baptisei</em> ou <em>baptizei</em> selon le prêtre.</li>
+    <li><strong>Le support.</strong> Encre ferro-gallique qui traverse la page, taches d'humidité, reliure qui avale la fin des lignes, numérisation parfois ancienne et en basse définition.</li>
+  </ul>
+
+  <div class="encart">
+    <div class="entete">Abréviations courantes dans les registres portugais</div>
+    <table class="abrev">
+      <thead><tr><th>Abrégé</th><th>Développé</th><th>Sens</th></tr></thead>
+      <tbody>
+        <tr><td>Ant.º</td><td>António</td><td>prénom</td></tr>
+        <tr><td>Jozé, J.e</td><td>José</td><td>prénom</td></tr>
+        <tr><td>M.el</td><td>Manuel (Manoel)</td><td>prénom</td></tr>
+        <tr><td>Fran.co</td><td>Francisco</td><td>prénom</td></tr>
+        <tr><td>Joaq.m</td><td>Joaquim</td><td>prénom</td></tr>
+        <tr><td>M.ª</td><td>Maria</td><td>prénom</td></tr>
+        <tr><td>freg.ª</td><td>freguesia</td><td>paroisse</td></tr>
+        <tr><td>leg.º, legit.º</td><td>legítimo</td><td>légitime</td></tr>
+        <tr><td>dº, d.to</td><td>dito</td><td>ledit, le même</td></tr>
+        <tr><td>q.</td><td>que</td><td>que, qui</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Ce qui a changé : Google Gemini lit l'écriture ancienne</h2>
+
+  <p>Jusqu'en 2024, la transcription automatique de manuscrits (on parle de HTR, pour <em>Handwritten Text Recognition</em>) demandait d'entraîner un modèle spécialisé sur des dizaines de pages déjà transcrites à la main. Les assistants grand public, eux, inventaient volontiers un texte plausible à partir de trois mots reconnus.</p>
+
+  <p>Fin 2025, l'historien Mark Humphries a publié un test qui a fait date dans le milieu. Il a soumis à <strong>Gemini 3 Pro</strong>, le modèle de Google, un corpus de manuscrits des XVIII<sup>e</sup> et XIX<sup>e</sup> siècles, chaque document étant passé dix fois. Résultat : un taux d'erreur d'environ <strong>1,7 % par caractère</strong> en comptant tout, et de <strong>0,7 %</strong> une fois écartées les différences de ponctuation et de majuscules. C'est le niveau d'un dactylographe professionnel qui recopie un texte imprimé. Dans le même test, Transkribus sans entraînement spécifique tournait autour de 8 %, et les autres grands modèles généralistes faisaient nettement moins bien que Gemini.</p>
+
+  <p>Sur les registres paroissiaux portugais du XIX<sup>e</sup> siècle, souvent rédigés dans une écriture régulière et sur un formulaire très répétitif, le résultat est en général remarquable : l'acte ressort lisible, abréviations développées, en quelques secondes. Pour le généalogiste amateur, c'est un vrai basculement. La lecture n'est plus le goulot d'étranglement.</p>
+
+  <div class="astuce"><strong>Une précision importante.</strong> Le test de référence portait sur des documents en anglais. Le portugais ancien est moins représenté dans les données d'entraînement de ces modèles, et les écritures des XVI<sup>e</sup> et XVII<sup>e</sup> siècles, comme l'écriture processuelle des <a href="/blog/cristaos-novos-inquisition-genealogie/">procès de l'Inquisition</a>, restent nettement plus difficiles. Plus l'acte est ancien, plus la relecture humaine compte.</div>
+
+  <h2>Méthode pas à pas avec Gemini</h2>
+
+  <ol>
+    <li><strong>Récupérer la meilleure image possible.</strong> Sur le portail des archives (DigitArq pour les Arquivos Distritais, ou celui de la Torre do Tombo), téléchargez la page en pleine résolution plutôt que de faire une capture d'écran. La qualité de l'image est le premier facteur de réussite.</li>
+    <li><strong>Recadrer sur un seul acte.</strong> Une page de registre contient souvent trois ou quatre actes. Isolez celui qui vous intéresse, en gardant la marge gauche, où figurent le nom de l'enfant et les mentions ajoutées plus tard.</li>
+    <li><strong>Utiliser Google AI Studio plutôt que l'application grand public.</strong> AI Studio est gratuit, permet de choisir le modèle Pro le plus récent et de régler la résolution de l'image en « élevée ». L'application Gemini classique fonctionne aussi, mais ses réglages ne sont pas maîtrisables.</li>
+    <li><strong>Donner une consigne stricte.</strong> Sans consigne, le modèle a tendance à « améliorer » le texte : moderniser l'orthographe, corriger un nom vers sa forme la plus courante. C'est précisément ce qu'il faut empêcher.</li>
+    <li><strong>Séparer transcription et traduction.</strong> Demandez d'abord le texte portugais tel qu'il est écrit, puis la traduction dans un second temps. Vous pourrez ainsi vérifier la lecture avant de faire confiance au sens.</li>
+  </ol>
+
+  <div class="encart">
+    <div class="entete">Consigne prête à copier dans Gemini</div>
+    <div class="prompt">Tu es paléographe, spécialiste des registres paroissiaux portugais des XVIIIe et XIXe siècles.
+
+Transcris l'acte de cette image ligne par ligne, en conservant exactement l'orthographe d'origine. Ne modernise rien et ne corrige aucun nom, même s'il te paraît mal écrit.
+
+Développe les abréviations entre crochets, par exemple : Ant[óni]o, freg[uesi]a.
+Signale chaque mot incertain par [?] et chaque passage illisible par [ilegível].
+Transcris séparément les mentions marginales.
+N'ajoute aucun mot qui ne figure pas sur l'image.
+
+Ensuite seulement, donne une traduction française et liste les personnes citées avec leur rôle (enfant, parents, grands-parents, parrain, marraine, prêtre).</div>
+  </div>
+
+  <h2>À quoi ressemble un acte bien transcrit</h2>
+
+  <p>Les actes de baptême du XIX<sup>e</sup> siècle suivent un formulaire presque immuable. Le connaître permet de repérer immédiatement une transcription qui dérape. Voici la structure type, reconstituée à partir de la formule usuelle :</p>
+
+  <div class="encart">
+    <div class="entete">Structure type d'un acte de baptême, XIX<sup>e</sup> siècle</div>
+    <div class="pt">
+      <p>Aos [dia] dias do mez de [mês] do anno de mil oito centos e [ano], nesta Igreja Parochial de [orago] da freguesia de [lugar], baptizei solemnemente a [nome], que nasceu aos [dia] do dito mez, filho legitimo de [pai] e de [mãe], naturaes e moradores no lugar de [aldeia], neto paterno de [avós paternos], e materno de [avós maternos]. Forão padrinhos [padrinho] e [madrinha]. E para constar fiz este termo que assignei.</p>
+    </div>
+    <p class="fr">Le [jour] du mois de [mois] de l'an mil huit cent [année], en cette église paroissiale de [saint patron] de la paroisse de [lieu], j'ai baptisé solennellement [prénom], né le [jour] dudit mois, fils légitime de [père] et de [mère], natifs et demeurant au lieu-dit de [hameau], petit-fils paternel de [grands-parents paternels] et maternel de [grands-parents maternels]. Furent parrain et marraine [parrain] et [marraine]. Et pour qu'il en soit ainsi, j'ai dressé cet acte que j'ai signé.</p>
+  </div>
+
+  <p>Remarquez ce que contient cette formule : <strong>trois générations en un seul acte</strong>, le père, la mère et les quatre grands-parents, avec leurs lieux d'origine. C'est ce qui rend les registres portugais si précieux, et c'est aussi pourquoi une seule erreur de lecture sur un nom peut envoyer toute une recherche sur la mauvaise lignée.</p>
+
+  <h2>Les erreurs typiques de l'IA, et comment les repérer</h2>
+
+  <p>Les erreurs résiduelles de Gemini ne sont pas aléatoires. Elles vont presque toujours dans le même sens : rendre le texte plus « normal » qu'il ne l'est. Sur un acte de généalogie, cela donne des pièges bien identifiés.</p>
+
+  <h3>Les noms propres normalisés</h3>
+  <p>Un patronyme rare est remplacé par un nom voisin plus courant. Un lieu-dit minuscule devient la ville connue la plus proche par la graphie. C'est l'erreur la plus dangereuse, parce qu'elle produit un résultat parfaitement crédible. Vérifiez chaque nom de personne et de lieu lettre par lettre contre l'image, et confrontez les toponymes à la liste des lieux de la paroisse.</p>
+
+  <h3>Les dates en toutes lettres</h3>
+  <p>Les actes écrivent les dates en mots : <em>aos vinte e tres dias</em>, <em>mil sete centos e noventa e oito</em>. Un « tres » lu « seis », un « setecentos » lu « oitocentos », et c'est un siècle ou une génération qui bascule. Vérifiez la cohérence : l'année doit correspondre à celle du registre, et la date de naissance précède de peu celle du baptême.</p>
+
+  <h3>Les mentions marginales oubliées</h3>
+  <p>Les annotations ajoutées dans la marge, parfois des décennies plus tard (mariage, décès, légitimation, rectification), sont souvent ignorées ou mal rattachées. Ce sont pourtant parfois les informations les plus utiles pour relier l'acte à la génération suivante. Demandez-les explicitement et contrôlez la marge vous-même.</p>
+
+  <h3>Les lignes sautées et les actes mélangés</h3>
+  <p>Sur une page dense, le modèle peut passer une ligne ou fondre deux actes voisins. Une transcription qui ne compte pas le même nombre de lignes que l'original doit éveiller le soupçon. D'où l'intérêt de recadrer sur un seul acte.</p>
+
+  <div class="astuce"><strong>La règle d'or.</strong> Une transcription par IA est un brouillon de lecture, pas une source. Tout ce qui sert à établir une filiation (noms, dates, lieux, liens de parenté) doit être vérifié sur l'image de l'acte original. Si vous citez l'acte dans un dossier, citez la cote d'archive, jamais la sortie de l'IA.</div>
+
+  <h2>Et Transkribus ?</h2>
+
+  <p>Transkribus est la plateforme de référence des archivistes et des historiens pour la transcription de manuscrits. Elle propose un modèle généraliste pour le portugais, entraîné sur des documents manuscrits et imprimés, qui annonce un taux d'erreur de l'ordre de 4 % sur ses propres données de validation. Sa force est ailleurs que chez Gemini : on peut l'entraîner sur un fonds précis, par exemple tous les registres d'une même paroisse rédigés par le même curé, et traiter ensuite des centaines de pages de façon homogène.</p>
+
+  <p>Pour le particulier qui veut lire quelques actes de sa famille, Gemini est aujourd'hui l'outil le plus simple et le plus performant. Pour un projet de dépouillement systématique, Transkribus garde tout son intérêt.</p>
+
+  <h2>Ce que l'IA ne fait pas</h2>
+
+  <p>Lire un acte n'est qu'une petite partie d'une recherche généalogique. L'IA ne vous dira pas dans quelle paroisse chercher quand la famille a changé de village. Elle ne vous dira pas que le registre que vous consultez a une lacune de six ans, que les baptêmes de cette période sont dans un autre volume, ou que la Maria da Conceição de cet acte n'est pas celle que vous cherchez mais sa cousine née la même année dans le hameau voisin. Elle ne sait pas non plus <a href="/blog/acte-naissance-portugais/">comment obtenir un acte récent</a> encore conservé à l'état civil.</p>
+
+  <p>Autrement dit, la transcription automatique a fait tomber le mur de la lecture. Elle n'a pas fait tomber celui de la recherche : trouver le bon acte, l'identifier avec certitude parmi les homonymes, et enchaîner les générations sans erreur de raccordement.</p>
+
+  <div class="cta">
+    <h2>Vous préférez avoir les actes, lus et vérifiés ?</h2>
+    <p>Raízes recherche vos ancêtres portugais génération par génération dans les archives du Portugal et vous remet pour chaque acte le scan d'origine, une transcription relue ligne à ligne et une analyse en français. J'utilise les meilleurs outils de lecture disponibles, mais chaque nom, date et lien de filiation est contrôlé sur l'original avant de vous être livré. L'évaluation de faisabilité est gratuite, et vous ne réglez que ce qui est réellement retrouvé.</p>
+    <a class="btn" href="/#contact">Demander une évaluation gratuite</a>
+    <p style="margin:16px 0 0;font-size:.9rem;color:var(--gris)">Voir aussi <a href="/#rendu">un exemple de rendu</a>, <a href="/#tarif">les formules et tarifs</a> et <a href="/blog/nationalite-portugaise-filiation/">le guide de la nationalité portugaise par filiation</a>.</p>
+  </div>
+
+  <div class="faq-bloc">
+    <h2>Questions fréquentes</h2>
+    <details>
+      <summary>Quelle IA est la meilleure pour lire une écriture manuscrite ancienne ?</summary>
+      <p>Les tests publiés depuis fin 2025 placent Google Gemini, dans ses versions Pro, nettement devant les autres grands modèles généralistes pour la transcription de manuscrits anciens. Sur un corpus de documents des XVIII<sup>e</sup> et XIX<sup>e</sup> siècles, Gemini 3 Pro a obtenu un taux d'erreur par caractère d'environ 1,7 %, proche d'un dactylographe professionnel. Transkribus reste pertinent pour traiter de gros volumes avec un modèle entraîné sur un fonds précis.</p>
+    </details>
+    <details>
+      <summary>Gemini est-il gratuit pour transcrire des actes ?</summary>
+      <p>Google AI Studio permet d'utiliser les modèles Gemini gratuitement, dans des limites d'usage largement suffisantes pour transcrire quelques dizaines d'actes. Par l'API payante, le coût tourne autour d'un centime par page.</p>
+    </details>
+    <details>
+      <summary>Peut-on faire confiance à une transcription faite par l'IA ?</summary>
+      <p>Comme base de travail, oui. Comme preuve, non sans relecture. Les erreurs résiduelles portent précisément sur ce qui compte en généalogie : noms de famille rares, toponymes, dates écrites en toutes lettres, mentions marginales. Chaque nom, date et lien de filiation doit être vérifié contre l'image de l'acte.</p>
+    </details>
+    <details>
+      <summary>L'IA peut-elle trouver l'acte de mon ancêtre à ma place ?</summary>
+      <p>Non. L'IA lit une image qu'on lui fournit. Identifier la bonne freguesia, le bon registre et le bon acte parmi des homonymes reste un travail de recherche que la transcription automatique ne fait pas.</p>
+    </details>
+    <details>
+      <summary>Est-ce que ça marche aussi pour les actes du XVII<sup>e</sup> siècle ?</summary>
+      <p>Moins bien. Les écritures antérieures au XVIII<sup>e</sup> siècle, plus chargées d'abréviations et de ligatures, et le portugais de l'époque, moins présent dans les données d'entraînement, font nettement monter le taux d'erreur. L'IA peut encore aider à dégrossir, mais la relecture par quelqu'un qui pratique la paléographie devient indispensable.</p>
+    </details>
+  </div>
+
+</article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Raízes</strong> · généalogie portugaise · recherche d'ancêtres dans les archives du Portugal · <a href="/blog/">blog</a> · <a href="/#contact">contact</a> · <a href="/mentions-legales.html">mentions légales</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
